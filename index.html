@@ -1,64 +1,105 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Galidjan Studios</title>
-  <meta name="theme-color" content="#0A0A0A" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="assets/icons/icon-192.png" type="image/png" />
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galidjan Studios</title>
+<meta name="theme-color" content="#0A0A0A">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="assets/icons/icon-192.png" type="image/png">
+<style>
+:root{--bg:#0A0A0A;--panel:#111;--border:#1F1F1F;--fg:#F5F5F5;--muted:#9AA0A6;--gold:#C6A15B}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial}
+.topbar{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:rgba(10,10,10,.8);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}
+.logo{width:28px;height:28px;border:2px solid var(--gold);border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:var(--gold);padding:2px}
+.nav a{color:var(--muted);text-decoration:none;margin:0 8px;padding:6px 8px;border-radius:8px}
+.nav a.active,.nav a:hover{color:var(--fg);background:#151515}
+.install{background:var(--gold);color:#0A0A0A;border:0;border-radius:10px;padding:8px 12px;font-weight:700}
+#app{padding:20px}
+.card{border:1px solid var(--border);background:var(--panel);border-radius:16px;padding:22px;max-width:1000px;margin:0 auto 22px auto;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+.hero{text-align:center}
+.badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:6px 10px;border-radius:999px;font-size:12px;letter-spacing:.3px;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px}
+.tile{border:1px solid var(--border);background:#0f0f0f;border-radius:12px;padding:14px}
+.view{display:none}.view.active{display:block}
+.footer{opacity:.65;text-align:center;padding:16px;border-top:1px solid var(--border)}
+</style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <img src="assets/images/gs-logo.svg" alt="GS" class="logo" />
-      <span>Galidjan <strong>Studios</strong></span>
-    </div>
-    <nav class="nav">
-      <a href="#home" data-view="home" class="active">Home</a>
-      <a href="#community" data-view="community">Community</a>
-      <a href="#livestreams" data-view="livestreams">Livestreams</a>
-      <a href="#admin" data-view="admin">Admin</a>
-    </nav>
-    <button id="installBtn" class="install" hidden>Install App</button>
-  </header>
+<header class="topbar">
+  <div class="brand"><div class="logo">GS</div><span>Galidjan <strong>Studios</strong></span></div>
+  <nav class="nav">
+    <a href="#home" data-view="home" class="active">Home</a>
+    <a href="#community" data-view="community">Community</a>
+    <a href="#livestreams" data-view="livestreams">Livestreams</a>
+    <a href="#admin" data-view="admin">Admin</a>
+  </nav>
+  <button id="installBtn" class="install" hidden>Install App</button>
+</header>
 
-  <main id="app">
-    <section id="view-home" class="view active">
-      <div class="card hero">
-        <div class="badge">PWA • Installable</div>
-        <h1>Welcome to Galidjan Studios</h1>
-        <p>This is your live PWA shell. Install me to your home screen for a full-screen, app-like experience.</p>
-        <div class="grid">
-          <div class="tile"><h3>Scripts</h3><p>AI-assisted writing tools.</p></div>
-          <div class="tile"><h3>Challenges</h3><p>Contests & leaderboards.</p></div>
-          <div class="tile"><h3>Podcast</h3><p>Built-in recording & hosting.</p></div>
-        </div>
+<main id="app">
+  <section id="view-home" class="view active">
+    <div class="card hero">
+      <div class="badge">PWA • Installable</div>
+      <h1>Welcome to Galidjan Studios</h1>
+      <p>This is your live PWA shell. Install me to your home screen for a full-screen, app-like experience.</p>
+      <div class="grid">
+        <div class="tile"><h3>Scripts</h3><p>AI-assisted writing tools.</p></div>
+        <div class="tile"><h3>Challenges</h3><p>Contests & leaderboards.</p></div>
+        <div class="tile"><h3>Podcast</h3><p>Built-in recording & hosting.</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="view-community" class="view">
-      <div class="card"><h2>Community</h2><p>Forums, networking for filmmakers, writers, and actors.</p></div>
-    </section>
+  <section id="view-community" class="view">
+    <div class="card"><h2>Community</h2><p>Forums, networking for filmmakers, writers, and actors.</p></div>
+  </section>
 
-    <section id="view-livestreams" class="view">
-      <div class="card"><h2>Livestreams</h2><p>Go live, host Q&A, and engage your audience.</p></div>
-    </section>
+  <section id="view-livestreams" class="view">
+    <div class="card"><h2>Livestreams</h2><p>Go live, host Q&A, and engage your audience.</p></div>
+  </section>
 
-    <section id="view-admin" class="view">
-      <div class="card"><h2>Admin</h2><p>Moderation tools, analytics, and user management (coming soon).</p></div>
-    </section>
-  </main>
+  <section id="view-admin" class="view">
+    <div class="card"><h2>Admin</h2><p>Moderation tools, analytics, and user management (coming soon).</p></div>
+  </section>
+</main>
 
-  <footer class="footer">© <span id="year"></span> Galidjan Studios</footer>
+<footer class="footer">© <span id="year"></span> Galidjan Studios</footer>
 
-  <script src="js/app.js"></script>
-  <script src="js/install.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => navigator.serviceWorker.register('service-worker.js'));
-    }
-  </script>
+<script>
+// Inline JS: SPA navigation + year + install prompt + SW
+const links = document.querySelectorAll('.nav [data-view]');
+const views = document.querySelectorAll('.view');
+links.forEach(a => a.addEventListener('click', e => {
+  e.preventDefault();
+  const id = a.getAttribute('data-view');
+  links.forEach(l => l.classList.toggle('active', l===a));
+  views.forEach(v => v.classList.toggle('active', v.id === 'view-'+id));
+  history.replaceState(null, '', '#'+id);
+}));
+const start = location.hash.replace('#','') || 'home';
+document.querySelector(`[data-view="${start}"]`)?.click();
+document.getElementById('year').textContent = new Date().getFullYear();
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('service-worker.js'));
+}
+
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.hidden = false;
+});
+installBtn.addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+  deferredPrompt = null;
+  installBtn.hidden = true;
+});
+</script>
 </body>
 </html>
